@@ -1,0 +1,134 @@
+/* ═══════════════════════════════════════════════════════════
+   NXT LTS — Arabic Override CSS
+   Loaded AFTER style.css on all AR pages.
+   Uses high specificity + !important to defeat inline <style>
+   blocks that some AR pages contain.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── RTL FONT ── */
+html[dir="rtl"], html[lang="ar"] {
+  direction: rtl !important;
+  font-family: 'IBM Plex Sans Arabic','Noto Sans Arabic',sans-serif !important;
+  background: #050810 !important;
+  color: #f0f4ff !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html[dir="rtl"] h1, html[dir="rtl"] h2, html[dir="rtl"] h3, html[dir="rtl"] h4, html[dir="rtl"] h5,
+html[lang="ar"] h1, html[lang="ar"] h2, html[lang="ar"] h3, html[lang="ar"] h4, html[lang="ar"] h5 {
+  font-family: 'IBM Plex Sans Arabic','Noto Sans Arabic',sans-serif !important;
+  letter-spacing: 0 !important;
+}
+
+/* ── NAVIGATION DARK ── */
+html[dir="rtl"] .nav, html[lang="ar"] .nav {
+  position: fixed !important;
+  top: 0; left: 0; right: 0; z-index: 200 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 18px 60px !important;
+  background: rgba(5,8,16,0.72) !important;
+  backdrop-filter: blur(28px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(124,58,237,0.16) !important;
+  box-shadow: none !important;
+  transition: padding 0.4s, background 0.4s !important;
+}
+
+html[dir="rtl"] .nav.scrolled, html[lang="ar"] .nav.scrolled {
+  padding: 11px 60px !important;
+  background: rgba(5,8,16,0.97) !important;
+}
+
+html[dir="rtl"] .nav-brand img, html[lang="ar"] .nav-brand img {
+  height: 40px !important;
+  filter: drop-shadow(0 0 10px rgba(168,85,247,0.3)) !important;
+}
+
+html[dir="rtl"] .nav-links, html[lang="ar"] .nav-links {
+  display: flex !important;
+  list-style: none !important;
+  gap: 34px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-direction: row !important;
+}
+
+html[dir="rtl"] .nav-links a, html[lang="ar"] .nav-links a {
+  color: #8b9fc0 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  font-size: 13.5px !important;
+}
+
+html[dir="rtl"] .nav-links a:hover, html[lang="ar"] .nav-links a:hover {
+  color: #f0f4ff !important;
+}
+
+/* ── BUTTONS ── */
+html[dir="rtl"] .btn-nav, html[lang="ar"] .btn-nav {
+  background: linear-gradient(135deg,#6d28d9,#a855f7) !important;
+  color: #fff !important;
+  padding: 10px 22px !important;
+  border-radius: 10px !important;
+  border: none !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  font-family: 'IBM Plex Sans Arabic','Noto Sans Arabic',sans-serif !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  box-shadow: 0 0 22px rgba(124,58,237,0.3) !important;
+  transition: transform 0.25s, box-shadow 0.25s !important;
+}
+
+html[dir="rtl"] .btn-nav:hover, html[lang="ar"] .btn-nav:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 28px rgba(124,58,237,0.5) !important;
+}
+
+/* ── FORM INPUTS ── */
+html[dir="rtl"] .form-group input, html[lang="ar"] .form-group input,
+html[dir="rtl"] .form-group textarea, html[lang="ar"] .form-group textarea,
+html[dir="rtl"] .form-group select, html[lang="ar"] .form-group select {
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  border-radius: 12px !important;
+  color: #f0f4ff !important;
+  font-family: 'IBM Plex Sans Arabic','Noto Sans Arabic',sans-serif !important;
+  font-size: 14.5px !important;
+  padding: 10px !important;
+}
+
+html[dir="rtl"] .form-group input:focus, html[lang="ar"] .form-group input:focus,
+html[dir="rtl"] .form-group textarea:focus, html[lang="ar"] .form-group textarea:focus,
+html[dir="rtl"] .form-group select:focus, html[lang="ar"] .form-group select:focus {
+  border-color: #a855f7 !important;
+  box-shadow: 0 0 0 3px rgba(168,85,247,0.12) !important;
+  outline: none !important;
+}
+
+/* ── FOOTER DARK ── */
+html[dir="rtl"] .footer, html[lang="ar"] .footer {
+  background: #0a0f1e !important;
+  border-top: 1px solid rgba(124,58,237,0.16) !important;
+  padding: 64px 60px 0 !important;
+  display: grid !important;
+  grid-template-columns: 2fr 1fr 1fr 1fr !important;
+  gap: 60px !important;
+  color: #f0f4ff !important;
+  text-align: right !important;
+}
+
+/* ── RESPONSIVE RTL ── */
+@media(max-width:1024px){
+  html[dir="rtl"] .nav, html[lang="ar"] .nav { padding:14px 24px !important; }
+  html[dir="rtl"] .nav-links, html[lang="ar"] .nav-links { display:none !important; }
+  html[dir="rtl"] .section, html[lang="ar"] .section { padding:70px 24px !important; }
+  html[dir="rtl"] .footer, html[lang="ar"] .footer { grid-template-columns:1fr 1fr !important; padding:40px 24px 0 !important; }
+}
+@media(max-width:640px){
+  html[dir="rtl"] .footer, html[lang="ar"] .footer { grid-template-columns:1fr !important; }
+}
