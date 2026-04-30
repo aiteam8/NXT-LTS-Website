@@ -725,20 +725,23 @@ nav {
     text-align: center;
 }
 
-.about-page .placeholder {
+.about-page .about-card {
     background: var(--c-card);
-    border: 0.5px dashed rgba(58, 154, 255, 0.3);
+    /* border: 0.5px dashed rgba(58, 154, 255, 0.3); */
     border-radius: 16px;
     padding: 4rem 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     color: var(--c-muted);
     font-size: 1rem;
     line-height: 1.7;
     width: 100%;
 }
 
-.about-page .placeholder h2 {
+.about-page .about-card h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
+    /* margin-top: 1rem; */
     color: var(--c-text);
 }
 
@@ -1116,11 +1119,11 @@ footer {
         padding: 2rem 1.5rem;
     }
 
-    .about-page .placeholder {
+    .about-page .about-card {
         padding: 2.5rem 1.5rem;
     }
 
-    .about-page .placeholder h2 {
+    .about-page .about-card h2 {
         font-size: 1.5rem;
         margin-bottom: 0.75rem;
     }
@@ -1462,17 +1465,17 @@ footer {
         min-height: auto;
     }
 
-    .about-page .placeholder {
+    .about-page .about-card {
         padding: 2rem 1.25rem;
         border-radius: 12px;
     }
 
-    .about-page .placeholder h2 {
+    .about-page .about-card h2 {
         font-size: 1.3rem;
         margin-bottom: 0.65rem;
     }
 
-    .about-page .placeholder p {
+    .about-page .about-card p {
         font-size: 13px;
         line-height: 1.6;
     }

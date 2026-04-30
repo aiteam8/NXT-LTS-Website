@@ -39,6 +39,36 @@ const serviceDescs = {
     ]
 };
 
+const aboutHeaders = {
+    en: [
+        "About NXT LTS",
+        "Our Vision",
+        "Our Mission",
+        "Our Track Record"
+    ],
+    ar: [
+        "عن NXT LTS",
+        "رؤيتنا",
+        "مهمتنا",
+        "سجلنا"
+    ]
+}
+
+const aboutParagraphs = {
+    en: [
+        "NXT LTS builds intelligent digital solutions that strengthen operations, boost efficiency, and turn data into real value. We deliver advanced AI and automation systems that help businesses stay ahead in a rapidly shifting digital landscape.",
+        "The vision of NXT LTS is to help organizations grow through intelligent technology and modern digital solutions, improving operations and enabling smarter decision making.",
+        "The mission of NXT LTS is to develop practical technology solutions combining AI, data analysis, and automation to solve real business challenges and enhance efficiency.",
+        "Since its foundation, NXT LTS has built practical tools including intelligent communication platforms, automation systems, and data analysis dashboards designed to support better decision making."
+    ],
+    ar: [
+        "تعمل NXT LTS على بناء حلول رقمية ذكية تعزز العمليات، وترفع الكفاءة، وتحول البيانات إلى قيمة حقيقية. نقدم أنظمة متقدمة في الذكاء الاصطناعي والأتمتة لمساعدة الشركات على البقاء في الصدارة ضمن بيئة رقمية سريعة التغير.",
+        "تتمثل رؤية NXT LTS في مساعدة المؤسسات على النمو من خلال التكنولوجيا الذكية والحلول الرقمية الحديثة، مع تحسين العمليات وتمكين اتخاذ قرارات أكثر ذكاءً.",
+        "تتمثل مهمة NXT LTS في تطوير حلول تقنية عملية تجمع بين الذكاء الاصطناعي وتحليل البيانات والأتمتة، بهدف حل التحديات الحقيقية للأعمال وتعزيز الكفاءة.",
+        "منذ تأسيسها، قامت NXT LTS بتطوير أدوات عملية تشمل منصات تواصل ذكية، وأنظمة أتمتة، ولوحات تحليل بيانات مصممة لدعم اتخاذ قرارات أفضل."
+    ]
+}
+
 const translations = {
     en: {
         navHome: 'Home', navServices: 'Services', navContact: 'Contact', navAbout: 'About',
@@ -56,8 +86,8 @@ const translations = {
         placeholderMsg: 'Tell us about your goals or challenges…',
         selectService: 'Select a service…', other: 'Other',
         btnSend: 'Send Message', reachDirect: 'Or reach us directly', lblSocials: 'Social',
-        aboutTitle: 'About NXT LTS',
-        aboutP: 'This section is coming soon. We\'re working on telling our story — the team, the mission, and what drives us to build smarter solutions every day.',
+        // aboutTitle: 'About NXT LTS',
+        // aboutP: 'This section is coming soon. We\'re working on telling our story — the team, the mission, and what drives us to build smarter solutions every day.',
         formSuccess: '✓ Message sent! We\'ll be in touch shortly.',
         footerSlogan: 'YOUR Next Long-Term Solution.',
         footerTagline: 'AI solutions that grow with your business — built for the long run.',
@@ -82,8 +112,8 @@ const translations = {
         placeholderMsg: 'أخبرنا عن أهدافك أو تحدياتك…',
         selectService: 'اختر خدمة…', other: 'أخرى',
         btnSend: 'إرسال', reachDirect: 'أو تواصل معنا مباشرة', lblSocials: 'التواصل الاجتماعي',
-        aboutTitle: 'عن NXT LTS',
-        aboutP: 'هذا القسم قادم قريبًا. نعمل على سرد قصتنا — الفريق والمهمة وما يدفعنا لبناء حلول أذكى كل يوم.',
+        // aboutTitle: 'عن NXT LTS',
+        // aboutP: 'هذا القسم قادم قريبًا. نعمل على سرد قصتنا — الفريق والمهمة وما يدفعنا لبناء حلول أذكى كل يوم.',
         formSuccess: '✓ تم إرسال رسالتك! سنتواصل معك قريبًا.',
         footerSlogan: 'حلّك طويل الأمد القادم.',
         footerTagline: 'حلول ذكاء اصطناعي تنمو مع أعمالك — مبنية للمدى البعيد.',
@@ -187,14 +217,20 @@ function toggleLang() {
     serviceNames[currentLang].forEach((name, i) => { if (sel.options[i + 1]) sel.options[i + 1].text = name; });
     sel.options[6].text = t.other;
 
-    document.querySelector('.about-page h2').textContent = t.aboutTitle;
-    document.querySelector('.about-page p').textContent = t.aboutP;
+    // Translation for the added about page
+    const about = document.querySelectorAll('.about-card');
+    about.forEach((d, i) => {
+        d.querySelector('h2').textContent = aboutHeaders[currentLang][i];
+        d.querySelector('p').textContent = aboutParagraphs[currentLang][i];
+    });
+    // document.querySelector('.about-page h2').textContent = t.aboutTitle;
+    // document.querySelector('.about-page p').textContent = t.aboutP;
 
     document.querySelector('.footer-brand .slogan').textContent = t.footerSlogan;
     document.querySelector('.footer-brand p').textContent = t.footerTagline;
     document.querySelectorAll('.footer-col h4')[0].textContent = t.footerServices;
     const fServicesLinks = document.querySelectorAll('.footer-col a')
-    for (i=0; i<=5; i++){
+    for (i = 0; i <= 5; i++) {
         fServicesLinks[i].textContent = serviceNames[currentLang][i]
     }
     document.querySelectorAll('.footer-col h4')[1].textContent = t.footerCompany;
