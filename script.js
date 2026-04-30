@@ -7,34 +7,34 @@ const serviceNames = {
 
 const serviceDescsHome = {
     en: [
-        "AI-driven conversations that engage, qualify, and delight your customers — 24/7.",
+        "AI-driven conversations that engage, qualify, and delight your customers 24/7.",
         "Understand how your customers truly feel with real-time, multilingual sentiment intelligence.",
         "Clear, visual, live dashboards that turn raw data into decisions.",
         "Eliminate manual bottlenecks with intelligent process automation that scales with your team.",
-        "See, detect, and act — visual AI that automates inspection, recognition, and monitoring."
+        "See, detect, and act. Visual AI that automates inspection, recognition, and monitoring."
     ],
     ar: [
-        "محادثات مدعومة بالذكاء الاصطناعي تُشرك عملاءك وتؤهلهم وتُسعدهم — على مدار الساعة طوال أيام الأسبوع.",
+        "محادثات مدعومة بالذكاء الاصطناعي تُشرك عملاءك وتؤهلهم وتُسعدهم على مدار الساعة طوال أيام الأسبوع.",
         "افهم كيف يشعر عملاؤك حقًا من خلال تحليل المشاعر الفوري ومتعدد اللغات.",
         "لوحات تحكم واضحة ومرئية ومباشرة تحول البيانات الخام إلى قرارات.",
         "تخلّص من الاختناقات اليدوية عبر أتمتة ذكية للعمليات تتوسع مع فريقك.",
-        "شاهد واكتشف وتصرّف — ذكاء بصري يؤتمت الفحص والتعرّف والمراقبة."
+        "شاهد واكتشف وتصرّف. ذكاء بصري يؤتمت الفحص والتعرّف والمراقبة."
     ]
 }
 
 const serviceDescs = {
     en: [
-        'Move beyond generic chatbots. Our AI communication layer understands context, intent, and tone — enabling meaningful, personalized conversations at every touchpoint. From <span class="emphasis">first inquiry</span> to <span class="emphasis">post-sale</span> support, your customers always feel heard and helped. Seamlessly integrates with your website, messaging platforms, and support tools.',
-        'Your customers are talking — are you listening? Our sentiment engine processes reviews, support tickets, surveys, and social signals in real-time, surfacing what people love, what frustrates them, and where you can <span class="emphasis">act</span>. Supports <span class="emphasis">Arabic</span> and <span class="emphasis">English</span>, with industry-specific fine-tuning for precision that generic models can\'t match.',
-        'Decision-makers shouldn\'t have to hunt for data. We build custom, interactive dashboards that surface your most critical KPIs in <span class="emphasis">real-time</span> — from operations to customer experience. Whether you need executive overviews or deep-dive analyst views, we design reporting experiences that people actually use and trust.',
-        'Repetitive tasks drain your team\'s potential. We map your processes, identify <span class="emphasis">automation opportunities</span>, and build intelligent workflows that execute reliably — routing requests, triggering actions, updating systems, and notifying the right people at the right moment. Less manual work, fewer errors, faster outcomes.',
-        'Train AI to <span class="emphasis">see</span> what matters. Our computer vision solutions handle object detection, quality inspection, face recognition, document processing, and visual search — deployed in the cloud or at the edge. From manufacturing floors to retail environments, we build <span class="emphasis">vision systems</span> that scale with your operations.'
+        'Move beyond generic chatbots. Our AI communication layer understands context, intent, and tone, enabling meaningful, personalized conversations at every touchpoint. From <span class="emphasis">first inquiry</span> to <span class="emphasis">post-sale</span> support, your customers always feel heard and helped. Seamlessly integrates with your website, messaging platforms, and support tools.',
+        'Your customers are talking, are you listening? Our sentiment engine processes reviews, support tickets, surveys, and social signals in real-time, surfacing what people love, what frustrates them, and where you can <span class="emphasis">act</span>. Supports <span class="emphasis>Arabic</span> and <span class=" emphasis">English</span>, with industry-specific fine-tuning for precision that generic models can\'t match.',
+        'Decision-makers shouldn\'t have to hunt for data. We build custom, interactive dashboards that surface your most critical KPIs in <span class="emphasis">real-time</span>, from operations to customer experience. Whether you need executive overviews or deep-dive analyst views, we design reporting experiences that people actually use and trust.',
+        'Repetitive tasks drain your team\'s potential. We map your processes, identify <span class="emphasis">automation opportunities</span>, and build intelligent workflows that execute reliably. Routing requests, triggering actions, updating systems, and notifying the right people at the right moment. Less manual work, fewer errors, faster outcomes.',
+        'Train AI to <span class="emphasis">see</span> what matters. Our computer vision solutions handle object detection, quality inspection, face recognition, document processing, and visual search. Deployed in the cloud or at the edge. From manufacturing floors to retail environments, we build <span class="emphasis">vision systems</span> that scale with your operations.'
     ],
     ar: [
         'تجاوز روبوتات الدردشة التقليدية. طبقة الذكاء الاصطناعي لدينا تفهم السياق والنية والنبرة، مما يتيح محادثات هادفة ومخصصة في كل نقطة تواصل. من الاستفسار الأول حتى دعم ما بعد البيع، يشعر عملاؤك دائمًا بأنهم مسموعون.',
-        'عملاؤك يتحدثون — هل تستمع؟ محرك المشاعر لدينا يعالج المراجعات وتذاكر الدعم والاستطلاعات وإشارات التواصل الاجتماعي في الوقت الفعلي، ليكشف ما يحبه الناس وما لا يحبوه وأين يمكنك التصرف. يدعم العربية والإنجليزية.',
+        'عملاؤك يتحدثون، هل تستمع؟ محرك المشاعر لدينا يعالج المراجعات وتذاكر الدعم والاستطلاعات وإشارات التواصل الاجتماعي في الوقت الفعلي، ليكشف ما يحبه الناس وما لا يحبوه وأين يمكنك التصرف. يدعم العربية والإنجليزية.',
         'لا ينبغي لصانعي القرار البحث عن البيانات. نبني لوحات معلومات مخصصة وتفاعلية تعرض أهم مؤشرات الأداء الرئيسية في الوقت الفعلي. سواء احتجت إلى نظرة عامة تنفيذية أو تحليلات متعمقة، نصمم تجارب تقارير يستخدمها الناس فعلاً.',
-        'المهام المتكررة تستنزف طاقة فريقك. نخطط عملياتك ونحدد فرص الأتمتة ونبني سير عمل ذكية تعمل بشكل موثوق — توجيه الطلبات وتشغيل الإجراءات وتحديث الأنظمة وإخطار الأشخاص المناسبين في اللحظة المناسبة.',
+        'المهام المتكررة تستنزف طاقة فريقك. نخطط عملياتك ونحدد فرص الأتمتة ونبني سير عمل ذكية تعمل بشكل موثوق. توجيه الطلبات وتشغيل الإجراءات وتحديث الأنظمة وإخطار الأشخاص المناسبين في اللحظة المناسبة.',
         'علّم الذكاء الاصطناعي أن يرى ما يهم. حلول الرؤية الحاسوبية لدينا تتعامل مع اكتشاف الأشياء وفحص الجودة والتعرف على الوجوه ومعالجة المستندات والبحث المرئي.'
     ]
 };
@@ -75,7 +75,7 @@ const translations = {
         navCta: 'Book a Meeting', langBtn: 'عربي',
         heroLabel: 'AI-Powered Business Solutions',
         heroH1: '<span class="emphasis">YOUR</span> Next<br><span>Long-Term Solution</span>',
-        heroP: 'We help businesses <span class="emphasis">harness</span> the power of AI — from intelligent automation to real-time insights — built to grow with you.',
+        heroP: 'We help businesses <span class="emphasis">harness</span> the power of AI, from intelligent automation to real-time insights, built to grow with you.',
         heroCta: 'Book a Strategy Meeting →',
         svcLabel: 'What We Do', svcTitle: 'Our Services',
         learnMore: 'Learn more →', getStarted: 'Get Started →',
@@ -90,7 +90,7 @@ const translations = {
         // aboutP: 'This section is coming soon. We\'re working on telling our story — the team, the mission, and what drives us to build smarter solutions every day.',
         formSuccess: '✓ Message sent! We\'ll be in touch shortly.',
         footerSlogan: 'YOUR Next Long-Term Solution.',
-        footerTagline: 'AI solutions that grow with your business — built for the long run.',
+        footerTagline: 'AI solutions that grow with your business. Built for the long run.',
         footerServices: 'SERVICES', footerCompany: 'COMPANY',
         footerAbout: 'About Us', footerContact: 'Contact',
         copyright: '© 2025 NXT LTS. All rights reserved.',
@@ -101,7 +101,7 @@ const translations = {
         navCta: 'احجز اجتماعًا', langBtn: 'English',
         heroLabel: 'حلول أعمال مدعومة بالذكاء الاصطناعي',
         heroH1: 'حلّك طويل الأمد<br><span>القادم</span>',
-        heroP: 'نساعد الشركات على تسخير قوة الذكاء الاصطناعي — من الأتمتة الذكية إلى الرؤى الفورية — مبنية لتنمو معك.',
+        heroP: 'نساعد الشركات على تسخير قوة الذكاء الاصطناعي، من الأتمتة الذكية إلى الرؤى الفورية. مبنية لتنمو معك.',
         heroCta: 'احجز اجتماعًا ←',
         svcLabel: 'ما نقدمه', svcTitle: 'خدماتنا',
         learnMore: 'اعرف المزيد ←', getStarted: 'ابدأ الآن ←',
@@ -116,7 +116,7 @@ const translations = {
         // aboutP: 'هذا القسم قادم قريبًا. نعمل على سرد قصتنا — الفريق والمهمة وما يدفعنا لبناء حلول أذكى كل يوم.',
         formSuccess: '✓ تم إرسال رسالتك! سنتواصل معك قريبًا.',
         footerSlogan: 'حلّك طويل الأمد القادم.',
-        footerTagline: 'حلول ذكاء اصطناعي تنمو مع أعمالك — مبنية للمدى البعيد.',
+        footerTagline: 'حلول ذكاء اصطناعي تنمو مع أعمالك. مبنية للمدى البعيد.',
         footerServices: 'الخدمات', footerCompany: 'الشركة',
         footerAbout: 'عن الشركة', footerContact: 'اتصل بنا',
         copyright: '© 2025 NXT LTS. جميع الحقوق محفوظة.',
@@ -194,7 +194,7 @@ function toggleLang() {
     const details = svcPage.querySelectorAll('.service-detail');
     details.forEach((d, i) => {
         d.querySelector('h2').textContent = serviceNames[currentLang][i];
-        d.querySelector('p').textContent = serviceDescs[currentLang][i];
+        d.querySelector('p').innerHTML = serviceDescs[currentLang][i];
         d.querySelector('.btn-outline').textContent = t.getStarted;
         // d.querySelector('.svc-img').textContent = t.imageLabel;
     });
@@ -221,7 +221,7 @@ function toggleLang() {
     const about = document.querySelectorAll('.about-card');
     about.forEach((d, i) => {
         d.querySelector('h2').textContent = aboutHeaders[currentLang][i];
-        d.querySelector('p').textContent = aboutParagraphs[currentLang][i];
+        d.querySelector('p').innerHTML = aboutParagraphs[currentLang][i];
     });
     // document.querySelector('.about-page h2').textContent = t.aboutTitle;
     // document.querySelector('.about-page p').textContent = t.aboutP;
