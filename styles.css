@@ -67,9 +67,9 @@ nav {
 .nav-logo {
     width: 44px;
     height: 44px;
-    border: 0.5px solid var(--c-border2);
-    border-radius: 10px;
-    background: var(--c-card);
+    /* border: 0.5px solid var(--c-border2); */
+    /* border-radius: 10px; */
+    /* background: var(--c-card); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -77,6 +77,11 @@ nav {
     color: var(--c-muted);
     font-weight: 500;
     flex-shrink: 0;
+}
+
+.nav-logo img {
+    width: 100%;
+    height: auto; /* Maintains the original aspect ratio */
 }
 
 .nav-links {
@@ -764,9 +769,9 @@ footer {
 .footer-brand .logo-box {
     width: 44px;
     height: 44px;
-    border: 0.5px solid var(--c-border2);
-    border-radius: 10px;
-    background: var(--c-card);
+    /* border: 0.5px solid var(--c-border2); */
+    /* border-radius: 10px; */
+    /* background: var(--c-card); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -774,6 +779,11 @@ footer {
     color: var(--c-muted);
     font-weight: 500;
     margin-bottom: 1rem;
+}
+
+.logo-box img {
+    width: 100%;
+    height: auto; /* Maintains the original aspect ratio */
 }
 
 .footer-brand .slogan {
