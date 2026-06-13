@@ -11,6 +11,8 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 from backend.RAG import initialize_rag_pipeline
@@ -126,17 +128,24 @@ async def chat(request: ChatPayload):
     return StreamingResponse(response_generator(), media_type="text/plain")
 
 
+# @app.get("/")
+# async def root():
+#     """Root endpoint with API information."""
+#     return {
+#         "name": "NXT LTS RAG Chatbot API",
+#         "version": "1.0.0",
+#         "endpoints": {
+#             "chat": "/chat",
+#             "docs": "/docs"
+#         }
+#     }
+
+# Serve static files (CSS, JS, etc.) from a folder
+app.mount("/static", StaticFiles(directory="frontend"), name="frontend")
+
 @app.get("/")
 async def root():
-    """Root endpoint with API information."""
-    return {
-        "name": "NXT LTS RAG Chatbot API",
-        "version": "1.0.0",
-        "endpoints": {
-            "chat": "/chat",
-            "docs": "/docs"
-        }
-    }
+    return FileResponse("frontend/index.html")
 
 
 @app.get("/docs", include_in_schema=False)
