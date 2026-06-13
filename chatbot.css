@@ -1,0 +1,591 @@
+/**
+ * NXT LTS Chatbot Widget Styles
+ * Responsive dark theme matching site design
+ */
+
+:root {
+  --c-deep: #1C0770;
+  --c-blue: #261CC1;
+  --c-sky: #3A9AFF;
+  --c-yellow: #F1FF5E;
+  --c-dark-bg: #0a0520;
+  --c-card: #120940;
+  --c-card2: #1a0f55;
+  --c-text: #f0eeff;
+  --c-muted: #9b92cc;
+  --c-border: rgba(58, 154, 255, 0.2);
+  --c-border2: rgba(241, 255, 94, 0.25);
+}
+
+/* ═════════════════════════════════════════════════════════ */
+/* WIDGET CONTAINER */
+/* ═════════════════════════════════════════════════════════ */
+
+.nxt-chatbot-widget {
+  all: revert;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  font-family: 'Stack Sans Notch', 'Google Sans', sans-serif;
+}
+
+/* ═════════════════════════════════════════════════════════ */
+/* FLOATING BUTTON */
+/* ═════════════════════════════════════════════════════════ */
+
+.nxt-chatbot-button {
+  all: revert;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid var(--c-yellow);
+  background: linear-gradient(135deg, var(--c-blue), var(--c-deep));
+  color: var(--c-yellow);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(241, 255, 94, 0.3);
+  transition: all 0.3s ease;
+  z-index: 9998;
+  padding: 0;
+}
+
+.nxt-chatbot-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(241, 255, 94, 0.5);
+}
+
+.nxt-chatbot-button:active {
+  transform: scale(0.95);
+}
+
+.nxt-chatbot-button.active {
+  background: linear-gradient(135deg, var(--c-yellow), rgba(241, 255, 94, 0.8));
+  color: var(--c-deep);
+  box-shadow: 0 0 20px rgba(241, 255, 94, 0.6);
+}
+
+.nxt-chatbot-button svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.nxt-chatbot-label {
+  display: none;
+}
+
+/* Show label on larger screens */
+@media (min-width: 768px) {
+  .nxt-chatbot-button {
+    width: auto;
+    height: auto;
+    padding: 12px 16px;
+    border-radius: 50px;
+  }
+
+  .nxt-chatbot-label {
+    display: inline;
+  }
+}
+
+/* ═════════════════════════════════════════════════════════ */
+/* CHAT WINDOW */
+/* ═════════════════════════════════════════════════════════ */
+
+.nxt-chatbot-window {
+  all: revert;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 100%;
+  max-width: 420px;
+  height: 500px;
+  max-height: 85vh;
+  background: var(--c-card);
+  border: 2px solid var(--c-yellow);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 20px rgba(241, 255, 94, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 9997;
+  animation: slideUp 0.3s ease;
+  overflow: hidden;
+}
+
+.nxt-chatbot-window.hidden {
+  display: none;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile: Full width with padding */
+@media (max-width: 600px) {
+  .nxt-chatbot-window {
+    bottom: 90px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    max-height: 70vh;
+    width: calc(100% - 20px);
+  }
+
+  .nxt-chatbot-button {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* ═════════════════════════════════════════════════════════ */
+/* HEADER */
+/* ═════════════════════════════════════════════════════════ */
+
+.nxt-chatbot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid var(--c-border);
+  flex-shrink: 0;
+}
+
+.nxt-chatbot-header h2 {
+  all: revert;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--c-text);
+  font-family: 'Stack Sans Notch', sans-serif;
+}
+
+.nxt-chatbot-header-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* ═════════════════════════════════════════════════════════ */
+/* CLOSE BUTTON */
+/* ═════════════════════════════════════════════════════════ */
+
+.nxt-chatbot-close-btn {
+  all: revert;
+  background: none;
+  border: none;
+  color: var(--c-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.nxt-chatbot-close-btn:hover {
+  color: var(--c-yellow);
+  transform: scale(1.1);
+}
+
+.nxt-chatbot-close-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* ═════════════════════════════════════════════════════════ */
+/* CLEAR BUTTON */
+/* ═════════════════════════════════════════════════════════ */
+
+.nxt-chatbot-clear-btn {
+  all: revert;
+  background: none;
+  border: none;
+  color: var(--c-muted);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.nxt-chatbot-clear-btn:hover {
+  color: var(--c-yellow);
+  transform: scale(1.1);
+}
+
+.nxt-chatbot-clear-btn:active {
+  transform: scale(0.95);
+}
+
+.nxt-chatbot-clear-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ═════════════════════════════════════════════════════════ */
+/* MESSAGES CONTAINER */
+/* ═════════════════════════════════════════════════════════ */
+
+.nxt-chatbot-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+.nxt-chatbot-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+.nxt-chatbot-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.nxt-chatbot-messages::-webkit-scrollbar-thumb {
+  background: var(--c-muted);
+  border-radius: 3px;
+}
+
+.nxt-chatbot-messages::-webkit-scrollbar-thumb:hover {
+  background: var(--c-sky);
+}
+
+/* ═════════════════════════════════════════════════════════ */
+/* MESSAGE BUBBLES */
+/* ═════════════════════════════════════════════════════════ */
+
+.nxt-chatbot-message {
+  display: flex;
+  gap: 8px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* User message (right-aligned) */
+.nxt-chatbot-message.user {
+  justify-content: flex-end;
+}
+
+.nxt-chatbot-message.user .nxt-chatbot-message-content {
+  background: var(--c-yellow);
+  color: var(--c-deep);
+  border: 2px solid var(--c-yellow);
+  font-weight: 500;
+}
+
+/* Assistant message (left-aligned) */
+.nxt-chatbot-message.assistant {
+  justify-content: flex-start;
+}
+
+.nxt-chatbot-message.assistant .nxt-chatbot-message-content {
+  background: var(--c-card2);
+  color: var(--c-text);
+  border: 1px solid var(--c-border);
+}
+
+/* Welcome message */
+.nxt-chatbot-message.welcome .nxt-chatbot-message-content {
+  background: linear-gradient(135deg, rgba(58, 154, 255, 0.1), rgba(38, 28, 193, 0.1));
+  border: 1px solid var(--c-border);
+}
+
+.nxt-chatbot-message.welcome .nxt-chatbot-message-content strong {
+  color: var(--c-sky);
+}
+
+/* Error message */
+.nxt-chatbot-message.assistant.error .nxt-chatbot-message-content {
+  background: rgba(255, 100, 100, 0.1);
+  border: 1px solid rgba(255, 100, 100, 0.5);
+  color: #ff9999;
+}
+
+/* Dropping animation when clearing chat */
+.nxt-chatbot-message.dropping {
+  animation: dropMessage 0.4s ease-in forwards;
+}
+
+@keyframes dropMessage {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+
+/* Content styling */
+.nxt-chatbot-message-content {
+  max-width: 85%;
+  padding: 12px;
+  border-radius: 8px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+/* Typing indicator animation */
+.nxt-chatbot-message-content.typing {
+  padding: 12px 14px;
+}
+
+.typing-indicator {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.typing-indicator span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.4;
+  animation: typingBounce 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+  0%, 60%, 100% {
+    opacity: 0.4;
+    transform: translateY(0);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(-8px);
+  }
+}
+
+/* Streaming pulse effect on message bubble */
+.nxt-chatbot-message.assistant .nxt-chatbot-message-content.typing {
+  animation: streamingPulse 2s ease-in-out infinite;
+}
+
+@keyframes streamingPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(58, 154, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(58, 154, 255, 0.1);
+  }
+}
+
+/* ═════════════════════════════════════════════════════════ */
+/* INPUT AREA */
+/* ═════════════════════════════════════════════════════════ */
+
+.nxt-chatbot-input-area {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid var(--c-border);
+  background: rgba(10, 5, 32, 0.5);
+  flex-shrink: 0;
+}
+
+/* Input field */
+.nxt-chatbot-input {
+  all: revert;
+  flex: 1;
+  padding: 10px 12px;
+  border: 2px solid var(--c-yellow);
+  border-radius: 6px;
+  background: var(--c-card);
+  color: var(--c-text);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.nxt-chatbot-input:focus {
+  border-color: var(--c-yellow);
+  box-shadow: 0 0 12px rgba(241, 255, 94, 0.4);
+  background: var(--c-card2);
+}
+
+.nxt-chatbot-input::placeholder {
+  color: var(--c-muted);
+}
+
+.nxt-chatbot-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Send button */
+.nxt-chatbot-send-btn {
+  all: revert;
+  padding: 10px 12px;
+  border: 2px solid var(--c-yellow);
+  border-radius: 6px;
+  background: var(--c-yellow);
+  color: var(--c-deep);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  font-weight: 600;
+}
+
+.nxt-chatbot-send-btn:hover:not(:disabled) {
+  box-shadow: 0 0 16px rgba(241, 255, 94, 0.5);
+  transform: translateY(-2px);
+}
+
+.nxt-chatbot-send-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.nxt-chatbot-send-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.nxt-chatbot-send-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ═════════════════════════════════════════════════════════ */
+/* RESPONSIVE ADJUSTMENTS */
+/* ═════════════════════════════════════════════════════════ */
+
+/* Tablet and small screens */
+@media (max-width: 768px) {
+  .nxt-chatbot-window {
+    max-height: 70vh;
+    height: auto;
+  }
+
+  .nxt-chatbot-messages {
+    max-height: 350px;
+  }
+
+  .nxt-chatbot-message-content {
+    max-width: 90%;
+    font-size: 13px;
+  }
+
+  .nxt-chatbot-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .nxt-chatbot-button {
+    right: 30px;
+    bottom: 30px;
+  }
+
+  .nxt-chatbot-window {
+    right: 30px;
+    bottom: 100px;
+    max-width: 450px;
+  }
+}
+
+/* ═════════════════════════════════════════════════════════ */
+/* DARK MODE (respects system preference) */
+/* ═════════════════════════════════════════════════════════ */
+
+@media (prefers-color-scheme: dark) {
+  /* Styles already optimized for dark mode */
+}
+
+@media (prefers-color-scheme: light) {
+  /* Fallback if needed (keep current dark theme) */
+}
+
+/* ═════════════════════════════════════════════════════════ */
+/* RTL SUPPORT */
+/* ═════════════════════════════════════════════════════════ */
+
+[dir='rtl'] .nxt-chatbot-widget {
+  right: auto;
+  left: 20px;
+}
+
+[dir='rtl'] .nxt-chatbot-button {
+  right: auto;
+  left: 20px;
+}
+
+[dir='rtl'] .nxt-chatbot-window {
+  right: auto;
+  left: 20px;
+}
+
+[dir='rtl'] .nxt-chatbot-message.user {
+  justify-content: flex-start;
+}
+
+[dir='rtl'] .nxt-chatbot-message.assistant {
+  justify-content: flex-end;
+}
+
+@media (max-width: 600px) {
+  [dir='rtl'] .nxt-chatbot-window {
+    right: auto;
+    left: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  [dir='rtl'] .nxt-chatbot-button {
+    right: auto;
+    left: 30px;
+  }
+
+  [dir='rtl'] .nxt-chatbot-window {
+    right: auto;
+    left: 30px;
+  }
+}
