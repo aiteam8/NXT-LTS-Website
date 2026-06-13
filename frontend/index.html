@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NXT LTS | Your Next Long-Term Solution</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="chatbot.css">
+    <link rel="stylesheet" href="frontend/styles.css">
+    <link rel="stylesheet" href="frontend/chatbot.css">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
         <!-- NAV -->
         <nav>
             <div class="nav-logo" id="navLogo">
-                <img src="content/logo.png" alt="NXT-LTS logo">
+                <img src="frontend/content/logo.png" alt="NXT-LTS logo">
             </div>
             <div class="nav-links" id="navLinks">
                 <a onclick="showPage('home'); closeMobileMenu()" class="active" id="nav-home">Home</a>
@@ -213,7 +213,7 @@
                             →</button>
                     </div>
                     <div class="svc-img">
-                        <img src="content/conversational_ai.jpeg" alt="Conversational AI">
+                        <img src="frontend/content/conversational_ai.jpeg" alt="Conversational AI">
                     </div>
                 </div>
 
@@ -241,7 +241,7 @@
                             industry-specific fine-tuning for precision that generic models can't match.</p>
                         <button class="btn-outline" onclick="goToContact('Sentiment Analysis')">Get Started →</button>
                     </div>
-                    <div class="svc-img"><img src="content/sentiment_analysis.jpeg" alt="Sentiment Analysis"></div>
+                    <div class="svc-img"><img src="frontend/content/sentiment_analysis.jpeg" alt="Sentiment Analysis"></div>
                 </div>
 
                 <!-- Service 3 -->
@@ -261,7 +261,7 @@
                         <button class="btn-outline" onclick="goToContact('Dashboards & Reporting')">Get Started
                             →</button>
                     </div>
-                    <div class="svc-img"><img src="content/dahsboarding_and_reporting.jpeg"
+                    <div class="svc-img"><img src="frontend/content/dahsboarding_and_reporting.jpeg"
                             alt="Dashboards and Reporting">
                     </div>
                 </div>
@@ -282,7 +282,7 @@
                             right people at the right moment. Less manual work, fewer errors, faster outcomes.</p>
                         <button class="btn-outline" onclick="goToContact('Automated Workflows')">Get Started →</button>
                     </div>
-                    <div class="svc-img"><img src="content/automated_workflow.jpeg" alt="Automated Workflows"></div>
+                    <div class="svc-img"><img src="frontend/content/automated_workflow.jpeg" alt="Automated Workflows"></div>
                 </div>
 
                 <!-- Service 5 -->
@@ -302,7 +302,7 @@
                             operations.</p>
                         <button class="btn-outline" onclick="goToContact('Computer Vision')">Get Started →</button>
                     </div>
-                    <div class="svc-img"><img src="content/computer_vision.jpeg" alt="Computer Vision"></div>
+                    <div class="svc-img"><img src="frontend/content/computer_vision.jpeg" alt="Computer Vision"></div>
                 </div>
 
             </div>
@@ -450,7 +450,7 @@
             <div class="footer-inner">
                 <div class="footer-brand">
                     <div class="logo-box">
-                        <img src="content/logo.png" alt="NXT-LTS logo">
+                        <img src="frontend/content/logo.png" alt="NXT-LTS logo">
                     </div>
                     <div class="slogan">YOUR Next Long-Term Solution.</div>
                     <p>AI solutions that grow with your business. Built for the long run.</p>
@@ -496,12 +496,12 @@
             </div>
         </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="frontend/script.js"></script>
     <script>
         // Configure RAG chatbot API endpoint
         window.NXT_RAG_API_BASE = 'http://localhost:8000';
     </script>
-    <script src="chatbot.js"></script>
+    <script src="frontend/chatbot.js"></script>
 </body>
 
 </html>
