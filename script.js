@@ -94,7 +94,10 @@ const translations = {
         footerServices: 'SERVICES', footerCompany: 'COMPANY',
         footerAbout: 'About Us', footerContact: 'Contact',
         copyright: '© 2025 NXT LTS. All rights reserved.',
-        imageLabel: '[ Service Image ]'
+        imageLabel: '[ Service Image ]',
+        // Chatbot
+        chatWel: '<div class="nxt-chatbot-message-content"><strong>Welcome to NXT LTS!</strong><br>Ask me anything about our services, solutions, and how we can help your business.</div>',
+        chatInputPH: 'Ask me anything...',
     },
     ar: {
         navHome: 'الرئيسية', navServices: 'الخدمات', navContact: 'اتصل بنا', navAbout: 'عن الشركة',
@@ -120,7 +123,10 @@ const translations = {
         footerServices: 'الخدمات', footerCompany: 'الشركة',
         footerAbout: 'عن الشركة', footerContact: 'اتصل بنا',
         copyright: '© 2025 NXT LTS. جميع الحقوق محفوظة.',
-        imageLabel: '[ صورة الخدمة ]'
+        imageLabel: '[ صورة الخدمة ]',
+        // Chatbot
+        chatWel: '<div class="nxt-chatbot-message-content"><strong>أهلاً بكم في NXT LTS!</strong> اسألني عن أي شيء يخص خدماتنا، حلولنا، وكيف يمكننا مساعدة عملك.</div>',
+        chatInputPH: 'كيف يمكنني مساعدتك...',
     }
 };
 
@@ -163,7 +169,12 @@ function toggleLang() {
     const dir = currentLang === 'ar' ? 'rtl' : 'ltr';
     document.documentElement.setAttribute('lang', currentLang);
     document.documentElement.setAttribute('dir', dir);
-
+    // document.getElementById('app-content').setAttribute('lang', currentLang);
+    // document.getElementById('app-content').setAttribute('dir', dir);
+    // document.getElementById('app-content').setAttribute('dir', dir);
+    // document.getElementById('nxt-chatbot-widget').setAttribute('dir', dir);
+    document.querySelector('.nxt-chatbot-input-area').setAttribute('dir', 'ltr');
+    
     document.getElementById('nav-home').textContent = t.navHome;
     document.getElementById('nav-services').textContent = t.navServices;
     document.getElementById('nav-contact').textContent = t.navContact;
@@ -238,6 +249,15 @@ function toggleLang() {
     fLinks[0].textContent = t.footerAbout;
     fLinks[1].textContent = t.footerContact;
     document.querySelector('.footer-bottom span').textContent = t.copyright;
+
+    // Translation for chatbot widget
+    const chatbot = document.querySelector('#nxt-chatbot-widget')
+    try { // try catch block for when user is loading a previous conversation
+        chatbot.querySelector('.welcome').innerHTML = t.chatWel
+    } catch (error) {
+        console.error("An error happened:", error.message);
+    }
+    chatbot.querySelector('.nxt-chatbot-input').placeholder = t.chatInputPH
 }
 
 function toggleMobileMenu() {
