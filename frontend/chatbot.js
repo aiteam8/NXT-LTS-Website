@@ -9,7 +9,7 @@ const enWelMsg = '<div class="nxt-chatbot-message-content"><strong>Welcome to NX
 class ChatbotWidget {
   constructor() {
     // Configuration - use window.NXT_RAG_API_BASE if available, otherwise use current origin
-    const apiBase = window.NXT_RAG_API_BASE || window.location.origin;
+    const apiBase = window.location.origin;
     this.apiUrl = `${apiBase}/chat`;
     this.storageKey = 'nxt_lts_chatbot_messages';
     this.isOpen = false;
