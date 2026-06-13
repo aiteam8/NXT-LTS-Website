@@ -67,6 +67,7 @@ origins = [
     "https://nxt-lts.com",
     "https://www.nxt-lts.com",
     "http://localhost:8000",
+    "http://127.0.0.1:8000",
 ]
 
 app.add_middleware(
@@ -128,23 +129,24 @@ async def chat(request: ChatPayload):
     return StreamingResponse(response_generator(), media_type="text/plain")
 
 
-# @app.get("/")
-# async def root():
-#     """Root endpoint with API information."""
-#     return {
-#         "name": "NXT LTS RAG Chatbot API",
-#         "version": "1.0.0",
-#         "endpoints": {
-#             "chat": "/chat",
-#             "docs": "/docs"
-#         }
-#     }
-
-# Serve static files (CSS, JS, etc.) from a folder
-app.mount("/static", StaticFiles(directory="frontend"), name="frontend")
-
 @app.get("/")
 async def root():
+    """Root endpoint with API information."""
+    return {
+        "name": "NXT LTS RAG Chatbot API",
+        "version": "1.0.0",
+        "endpoints": {
+            "chat": "/chat",
+            "docs": "/docs",
+            "ui": "/home"
+        }
+    }
+
+# Serve static files (CSS, JS, etc.) from a folder
+app.mount("/frontend", StaticFiles(directory="frontend"), name="frontend")
+
+@app.get("/home")
+async def serve_ui():
     return FileResponse("frontend/index.html")
 
 
