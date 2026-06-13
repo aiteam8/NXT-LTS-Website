@@ -66,8 +66,8 @@ origins = [
     "http://127.0.0.1:5500",
     "https://nxt-lts.com",
     "https://www.nxt-lts.com",
-    "http://localhost:8000",
-    "http://127.0.0.1:8000",
+    "http://localhost:8080",
+    "http://127.0.0.1:8080",
     "https://nxt-lts-website-production.up.railway.app/",
 ]
 
@@ -170,7 +170,7 @@ async def http_exception_handler(request, exc):
 if __name__ == "__main__":
     import uvicorn
     
-    port = int(os.getenv("PORT", 8000))
+    port = int(os.getenv("PORT", 8080))
     host = os.getenv("HOST", "0.0.0.0")
     
     print(f"Starting server on {host}:{port}")
